@@ -1,11 +1,11 @@
 import weexHttp from 'weex-http'
 const stream = weex.requireModule('stream')
-const baseURL = 'https://hacker-news.firebaseio.com/v0'
+const baseURL = 'https://www.chcit.com.cn/elink_scm_purchase'
 
 export function fetch (path,obj) {
   return new Promise((resolve, reject) => {
 
-    weexHttp.get(`${baseURL}/${path}.json`, {xx:"xx",yy:"yy"},{
+    weexHttp.get(`${baseURL}/${path}.do`, {user:'zxy', password:123},{
         headers: {'CHeader': 'foobar'},
         transformRequest :[function(r) {
             console.log("transformRequest: ",r);
@@ -37,7 +37,7 @@ export function fetch (path,obj) {
 }
 
 export function fetchIdsByType (type) {
-  return fetch(`${type}stories`)
+  return fetch(`mCenterAction/webLogin`)
 }
 
 export function fetchItem (id) {
